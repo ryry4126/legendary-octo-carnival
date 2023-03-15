@@ -9,12 +9,12 @@ class TasksController < ApplicationController
 
     def create
         Task.create(title: params[:title])
-        redirect_to "/tasks"
+        redirect_to "/"
     end
 
     def destroy
         @task = Task.find_by(id: params[:id])
         @task.destroy
-        redirect_to("/tasks")
+        redirect_to("/")
     end
 end
